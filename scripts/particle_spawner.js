@@ -74,7 +74,7 @@
       (location.y + particleDimension) >= window.innerHeight;
   }
 
-  window.addEventListener("pointermove", (event) => {
+  function handleMouseDrag(event) {
     const now = new Date().getTime();
     if (lastPointerMove &&
         (!lastPointerMoveParticleSpawned ||
@@ -104,13 +104,12 @@
     }
 
     lastPointerMove = event;
-  })
-
+  }
 
   function handleClicks(event) {
     const location = {
-      x: (event.pageX || event.clientX) - particleDimensionHalf,
-      y: (event.pageY || event.clientY) - particleDimensionHalf
+      x: (event.pageX || event.clientX || event.touches[0].clientX) - particleDimensionHalf,
+      y: (event.pageY || event.clientY || event.touches[0].clientY) - particleDimensionHalf
     };
 
     for (var i = 0; i < numClickParticles; ++i) {
@@ -125,6 +124,10 @@
     }
   }
 
-  window.addEventListener("click", handleClicks);
-  window.addEventListener("touchstart", handleClicks);
+  if ('ontouchstart' in document.documentElement) {
+    window.addEventListener("touchstart", handleClicks, false);
+  } else {
+    window.addEventListener("click", handleClicks, false);
+    window.addEventListener("pointermove", handleMouseDrag, false);
+  }
 })();
