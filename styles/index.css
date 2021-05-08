@@ -1,0 +1,29 @@
+body {
+  display: flex;
+  flex-direction: column-reverse;
+
+  background-color: #000;
+  background-image: url("../assets/img/vlam_front_cover.webp");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+#bgm-player {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2em;
+}
+
+#download-link {
+  font-family: sans-serif;
+  font-size: larger;
+  background-color: #000;
+  color: #fff;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1em;
+  padding: 0.5em;
+  text-decoration: none;
+}
