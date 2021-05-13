@@ -9,20 +9,35 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
+  
+  font-family: sans-serif;
+  font-size: larger;
+  color: #fff;
 }
 
 #bgm-player {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 300;
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: 2em;
+  padding: 0.2em;
+  background-color: #000;
+}
+
+#bgm-info-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.2em;
+}
+
+#track-name {
+  text-align: center;
 }
 
 #download-link {
-  font-family: sans-serif;
-  font-size: larger;
-  background-color: #000;
   color: #fff;
+  background-color: #000;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 1em;

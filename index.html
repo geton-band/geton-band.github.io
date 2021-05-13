@@ -9,14 +9,20 @@
 
 <body>
   <div id="bgm-player">
-    <audio autoplay controls>
-      <source src="./assets/music/elizabeth_bathory.mp3" type="audio/mpeg">
+    <div id="bgm-info-container">
+      <input id="previous-song-btn" type="image" src="./assets/img/skip_previous_white_24dp.svg" alt="Edellinen kappale" width="24" height="24" />
+      <span id="track-name">Elizabeth Bathory</span>
+      <input id="next-song-btn" type="image" src="./assets/img/skip_next_white_24dp.svg" alt="Seuraava kappale" width="24" height="24" />
+    </div>
+    <audio id="bgm-audio" autoplay controls>
+      <source id="bgm-source" src="./assets/music/elizabeth_bathory.mp3" type="audio/mpeg">
       Selaimesi ei tue audiotoistoa
     </audio>
   </div> 
 
   <a id="download-link" href="https://drive.google.com/file/d/1pC8gxlt6_wC4eTJ_eUb3Cq1sBW68sG5a/view?usp=sharing">Lataa Vuohet laskee alas mäkeä</a>
   
+  <script src="scripts/audio_player.js" async></script>
   <script src="scripts/particle_spawner.js" async></script>
 </body>
 
