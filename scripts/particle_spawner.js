@@ -128,10 +128,40 @@
     }
   }
 
-  if ('ontouchstart' in document.documentElement) {
-    window.addEventListener("touchstart", handleClicks, false);
-  } else {
-    window.addEventListener("click", handleClicks, false);
-    window.addEventListener("pointermove", handleMouseDrag, false);
+  const isMobile = "ontouchstart" in document.documentElement
+  const clickEventType = isMobile ? "touchstart" : "click";
+
+  function enableClickParticles() {
+    window.addEventListener(clickEventType, handleClicks, false);
   }
+
+  function disableClickParticles() {
+    window.removeEventListener(clickEventType, handleClicks, false);
+  }
+
+  function enableMouseDragParticles() {
+    window.addEventListener("pointermove", handleMouseDrag, false);
+
+  }
+
+  function disableMouseDragParticles() {
+    window.removeEventListener("pointermove", handleMouseDrag, false);
+  }
+
+  function setEnabledFromLocalStorage() {
+    if (localStorage.getItem(GetonConstants.clickParticleSettings.storageName) === "true") {
+      enableClickParticles();
+    } else {
+      disableMouseDragParticles();
+    }
+
+    if (localStorage.getItem(GetonConstants.mouseDragParticleSettings.storageName) === "true") {
+      enableMouseDragParticles();
+    } else {
+      disableMouseDragParticles();
+    }
+  };
+
+  setEnabledFromLocalStorage();
+  window.addEventListener(GetonConstants.events.particleSettingsChanged, setEnabledFromLocalStorage);
 })();

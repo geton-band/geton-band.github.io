@@ -8,6 +8,18 @@
 </head>
 
 <body>
+  <div id="dropdown-menu">
+    <div>
+      <label for="click-particles-enabled">Partikkeleja klikatessa</label>
+      <input id="click-particles-enabled" type="checkbox" checked/>
+    </div>
+    <div>
+      <label for="mousedrag-particles-enabled">Partikkeleja hiirtä liikuttaessa</label>
+      <input id="mousedrag-particles-enabled" type="checkbox" />
+    </div>
+  </div>
+  <input id="toggle-dropdown-menu-btn" type="image" src="./assets/img/arrow_drop_down_white_24dp.svg" alt="Menu" width="24" height="24" />
+
   <div id="bgm-player">
     <div id="bgm-info-container">
       <input id="previous-song-btn" type="image" src="./assets/img/skip_previous_white_24dp.svg" alt="Edellinen kappale" width="24" height="24" />
@@ -22,8 +34,10 @@
 
   <a id="download-link" href="https://drive.google.com/file/d/1pC8gxlt6_wC4eTJ_eUb3Cq1sBW68sG5a/view?usp=sharing">Lataa Vuohet laskee alas mäkeä</a>
   
+  <script src="scripts/constants.js"></script>
   <script src="scripts/audio_player.js" async></script>
   <script src="scripts/particle_spawner.js" async></script>
+  <script src="scripts/dropdown_menu.js" async></script>
 </body>
 
 </html>
