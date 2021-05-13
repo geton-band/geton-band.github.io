@@ -112,6 +112,10 @@
       y: (event.pageY || event.clientY || event.touches[0].clientY) - particleDimensionHalf
     };
 
+    if (isOutOfBounds(location)) {
+      return;
+    }
+
     for (var i = 0; i < numClickParticles; ++i) {
       let direction = {
         x: -1 + Math.random() * 2,
