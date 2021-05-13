@@ -149,13 +149,22 @@
   }
 
   function setEnabledFromLocalStorage() {
-    if (localStorage.getItem(GetonConstants.clickParticleSettings.storageName) === "true") {
+    const storedClicksEnabled = localStorage.getItem(GetonConstants.clickParticleSettings.storageName);
+    const clicksEnabled = storedClicksEnabled != null
+      ? JSON.parse(storedClicksEnabled)
+      : GetonConstants.clickParticleSettings.default;
+    if (clicksEnabled) {
       enableClickParticles();
     } else {
       disableClickParticles();
     }
 
-    if (localStorage.getItem(GetonConstants.mouseDragParticleSettings.storageName) === "true") {
+    const storedDragEnabled = localStorage.getItem(GetonConstants.mouseDragParticleSettings.storageName);
+    const dragEnabled = storedDragEnabled != null
+      ? JSON.parse(storedDragEnabled)
+      : GetonConstants.mouseDragParticleSettings.default;
+
+    if (dragEnabled) {
       enableMouseDragParticles();
     } else {
       disableMouseDragParticles();
