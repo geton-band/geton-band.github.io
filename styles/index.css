@@ -32,6 +32,11 @@ body {
   background-color: #000;
 }
 
+.dropdown-menu-item {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
 #bgm-player {
   width: 300;
   margin-left: auto;
