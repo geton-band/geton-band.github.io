@@ -152,7 +152,7 @@
     if (localStorage.getItem(GetonConstants.clickParticleSettings.storageName) === "true") {
       enableClickParticles();
     } else {
-      disableMouseDragParticles();
+      disableClickParticles();
     }
 
     if (localStorage.getItem(GetonConstants.mouseDragParticleSettings.storageName) === "true") {
