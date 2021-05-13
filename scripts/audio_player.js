@@ -1,10 +1,13 @@
 "use strict";
 (function audio_player() {
+    const currentSongIndexStorageName = "currentSongIndex";
+    const defaultInitialSongIndex = 5;
+
     const trackName = document.getElementById("track-name");
     const player = document.getElementById("bgm-audio");
     const audioSource = document.getElementById("bgm-source");
 
-    let currentSongIndex = 5;
+    let currentSongIndex = defaultInitialSongIndex;
     const songs = [
         {
             displayName: "Unholy Black Metal",
@@ -40,22 +43,39 @@
             currentSongIndex = songs.length - 1;
         }
 
-        updateSource();
+        updateSong();
     }
 
     function nextSong(event) {
         event && event.preventDefault();
 
         currentSongIndex = (currentSongIndex + 1) % songs.length;
-        updateSource();
+        updateSong();
     }
 
-    function updateSource() {
+    function setSong(index) {
+        currentSongIndex = index;
+        updateSong();
+    }
+
+    function updateSong() {
         const song = songs[currentSongIndex];
         trackName.innerText = song.displayName;
         audioSource.src = `./assets/music/${song.fileName}.mp3`;
         player.load();
+
+        localStorage.setItem(currentSongIndexStorageName, JSON.stringify(currentSongIndex));
     }
+
+    (function checkLocalStorageForSongIndex() {
+        const storedSongIndex = localStorage.getItem(currentSongIndexStorageName);
+        if (storedSongIndex !== null) {
+            const parsedStoredSongIndex = JSON.parse(storedSongIndex);
+            if (typeof parsedStoredSongIndex === "number") {
+                setSong(parsedStoredSongIndex);
+            }
+        }
+    })();
 
     document.getElementById("previous-song-btn").onclick = previousSong;
     document.getElementById("next-song-btn").onclick = nextSong;
