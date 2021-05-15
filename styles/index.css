@@ -61,8 +61,11 @@ body {
   text-align: center;
 }
 
-#download-link {
+a {
   color: #fff;
+}
+
+#download-link {
   background-color: #000;
   margin-left: auto;
   margin-right: auto;
