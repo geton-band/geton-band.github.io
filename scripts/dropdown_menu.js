@@ -46,6 +46,7 @@
         mouseDragParticlesCheckbox.checked = mouseDragParticlesEnabled;
     })();
 
+    menuToggleButton.className = menuToggleButton.className.replace("noscript-hidden", "");
     menuToggleButton.onclick = toggleMenuOpen;
     clickParticlesCheckbox.addEventListener("change", setClickParticles);
     mouseDragParticlesCheckbox.addEventListener("change", setMouseDragParticles);

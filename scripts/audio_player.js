@@ -77,7 +77,13 @@
         }
     })();
 
-    document.getElementById("previous-song-btn").onclick = previousSong;
-    document.getElementById("next-song-btn").onclick = nextSong;
+    const previousBtn = document.getElementById("previous-song-btn");
+    previousBtn.className = previousBtn.className.replace("noscript-hidden", "");
+    previousBtn.onclick = previousSong;
+
+    const nextBtn = document.getElementById("next-song-btn");
+    nextBtn.className = nextBtn.className.replace("noscript-hidden", "");
+    nextBtn.onclick = nextSong;
+    
     player.onended = nextSong;
 })();

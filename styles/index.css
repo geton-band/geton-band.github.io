@@ -15,6 +15,10 @@ body {
   color: #fff;
 }
 
+.noscript-hidden {
+  visibility: hidden;
+}
+
 #toggle-dropdown-menu-btn {
   position: absolute;
   top: 0.48em;
