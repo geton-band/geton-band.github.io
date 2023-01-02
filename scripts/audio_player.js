@@ -33,6 +33,14 @@
             displayName: "Elizabeth Bathory",
             fileName: "elizabeth_bathory"
         },
+        {
+            displayName: "Lopun Alku",
+            fileName: "lopun_alku"
+        },
+        {
+            displayName: "Viimeinen Polku",
+            fileName: "viimeinen_polku"
+        },
     ];
 
     function previousSong(event) {
