@@ -35,7 +35,7 @@
         },
         {
             displayName: "Lopun Alku",
-            fileName: "lopun_alku"
+            fileName: "lopun_alku.mp3"
         },
         {
             displayName: "Viimeinen Polku",
