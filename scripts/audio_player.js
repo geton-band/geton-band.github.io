@@ -11,27 +11,27 @@
     const songs = [
         {
             displayName: "Unholy Black Metal",
-            fileName: "unholy_black_metal"
+            fileName: "unholy_black_metal.mp3"
         },
         {
             displayName: "Lost Wisdom",
-            fileName: "lost_wisdom"
+            fileName: "lost_wisdom.mp3"
         },
         {
             displayName: "Call from the Grave",
-            fileName: "call_from_the_grave"
+            fileName: "call_from_the_grave.mp3"
         },
         {
             displayName: "Laulu Mustan Variksen",
-            fileName: "laulu_mustan_variksen"
+            fileName: "laulu_mustan_variksen.mp3"
         },
         {
             displayName: "Lord of the Darkest of Thrones",
-            fileName: "lord_of_the_darkest_of_thrones"
+            fileName: "lord_of_the_darkest_of_thrones.mp3"
         },
         {
             displayName: "Elizabeth Bathory",
-            fileName: "elizabeth_bathory"
+            fileName: "elizabeth_bathory.mp3"
         },
         {
             displayName: "Lopun Alku",
@@ -39,7 +39,11 @@
         },
         {
             displayName: "Viimeinen Polku",
-            fileName: "viimeinen_polku"
+            fileName: "viimeinen_polku.mp3"
+        },
+        {
+            displayName: "Xmas song 2023",
+            fileName: "xmas_song_2023.m4a"
         },
     ];
 
@@ -69,7 +73,7 @@
     function updateSong() {
         const song = songs[currentSongIndex];
         trackName.innerText = song.displayName;
-        audioSource.src = `./assets/music/${song.fileName}.mp3`;
+        audioSource.src = `./assets/music/${song.fileName}`;
         player.load();
 
         localStorage.setItem(currentSongIndexStorageName, JSON.stringify(currentSongIndex));
