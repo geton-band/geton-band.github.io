@@ -42,8 +42,8 @@
             fileName: "viimeinen_polku.mp3"
         },
         {
-            displayName: "Xmas song 2023",
-            fileName: "xmas_song_2023.mp3"
+            displayName: "Neljä Sinettiä",
+            fileName: "nelja_sinettia.mp3"
         },
     ];
 
